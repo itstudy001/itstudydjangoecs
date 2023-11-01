@@ -12,13 +12,11 @@ permissions:
 
 env:
   AWS_REGION: ap-northeast-2
-  ECR_REPOSITORY: itstudy  
+  ECR_REPOSITORY: itstudydjangoecs  
   ECS_SERVICE: itstudyservice
-  ECS_CLUSTER: itstudy                 # set this to your Amazon ECS cluster name
-  ECS_TASK_DEFINITION: ./task-definition # set this to the path to your Amazon ECS task definition
-                                                 # file, e.g. .aws/task-definition.json
-  CONTAINER_NAME: itstudycontainer           # set this to the name of the container in the
-                                                 # containerDefinitions section of your task definition
+  ECS_CLUSTER: itstudy                 
+  ECS_TASK_DEFINITION: ./task-definition
+  CONTAINER_NAME: itstudycontainer       
 
 jobs:
   build:
