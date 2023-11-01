@@ -1,5 +1,5 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:753510247212:task-definition/itstudydjangoecs:2",
+    "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:753510247212:task-definition/itstudydjangoecs:3",
     "containerDefinitions": [
         {
             "name": "itstudydjangoecs",
@@ -34,7 +34,7 @@
     "family": "itstudydjangoecs",
     "executionRoleArn": "arn:aws:iam::753510247212:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
-    "revision": 2,
+    "revision": 3,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -77,7 +77,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2023-10-31T22:33:47.743Z",
+    "registeredAt": "2023-11-01T08:22:28.950Z",
     "registeredBy": "arn:aws:iam::753510247212:root",
     "tags": []
 }
