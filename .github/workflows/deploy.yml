@@ -8,11 +8,11 @@ on:
 
 env:
   AWS_REGION: ap-northeast-2                   # set this to your preferred AWS region, e.g. us-west-1
-  ECR_REPOSITORY: itstudydjangoecs           # set this to your Amazon ECR repository name
-  ECS_SERVICE: itstudydjangoecs                  # set this to your Amazon ECS service name
-  ECS_CLUSTER: itstudydjangoecs                 # set this to your Amazon ECS cluster name
+  ECR_REPOSITORY: itstudy           # set this to your Amazon ECR repository name
+  ECS_SERVICE: itstudyservice                  # set this to your Amazon ECS service name
+  ECS_CLUSTER: itstudy               # set this to your Amazon ECS cluster name
   ECS_TASK_DEFINITION: ./task-definition.json # set this to the path to your Amazon ECS task definition                                                 # file, e.g. .aws/task-definition.json
-  CONTAINER_NAME: itstudydjangoecs           # set this to the name of the container in the
+  CONTAINER_NAME: itstudycontainer           # set this to the name of the container in the
                                               # containerDefinitions section of your task definition
 
 jobs:
@@ -37,15 +37,15 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@0e613a0980cbf65ed5b322eb7a1e075d28913a83
+        uses:  aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: AKIA264FV5MWMBKWBS4G
-          aws-secret-access-key: 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
+          aws-access-key-id: AKIAZKP7ENHO6LQMFRUL
+          aws-secret-access-key: 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
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Login to Amazon ECR
         id: login-ecr
-        uses: aws-actions/amazon-ecr-login@62f4f872db3836360b72999f4b87f1ff13310f3a
+        uses: aws-actions/amazon-ecr-login@v1
 
       - name: Build, tag, and push image to Amazon ECR
         id: build-image

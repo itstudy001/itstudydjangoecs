@@ -1,12 +1,12 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:753510247212:task-definition/itstudydjangoecs:3",
+    "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:641022061021:task-definition/itstudy-task:1",
     "containerDefinitions": [
         {
-            "name": "itstudydjangoecs",
+            "name": "itstudycontainer",
             "cpu": 0,
             "portMappings": [
                 {
-                    "name": "itstudydjangoecs-80-tcp",
+                    "name": "itstudycontainer-80-tcp",
                     "containerPort": 80,
                     "hostPort": 80,
                     "protocol": "tcp",
@@ -23,7 +23,7 @@
                 "logDriver": "awslogs",
                 "options": {
                     "awslogs-create-group": "true",
-                    "awslogs-group": "/ecs/itstudydjangoecs",
+                    "awslogs-group": "/ecs/itstudy-task",
                     "awslogs-region": "ap-northeast-2",
                     "awslogs-stream-prefix": "ecs"
                 },
@@ -31,10 +31,10 @@
             }
         }
     ],
-    "family": "itstudydjangoecs",
-    "executionRoleArn": "arn:aws:iam::753510247212:role/ecsTaskExecutionRole",
+    "family": "itstudy-task",
+    "executionRoleArn": "arn:aws:iam::641022061021:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
-    "revision": 3,
+    "revision": 1,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -71,13 +71,13 @@
     "requiresCompatibilities": [
         "FARGATE"
     ],
-    "cpu": "256",
-    "memory": "512",
+    "cpu": "1024",
+    "memory": "3072",
     "runtimePlatform": {
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2023-11-01T08:22:28.950Z",
-    "registeredBy": "arn:aws:iam::753510247212:root",
+    "registeredAt": "2023-11-01T09:55:26.281Z",
+    "registeredBy": "arn:aws:iam::641022061021:root",
     "tags": []
 }
