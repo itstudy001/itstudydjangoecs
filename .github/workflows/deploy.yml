@@ -13,10 +13,10 @@ permissions:
 env:
   AWS_REGION: ap-northeast-2
   ECR_REPOSITORY: itstudydjangoecs  
-  ECS_SERVICE: itstudyservice
-  ECS_CLUSTER: itstudy                 
+  ECS_SERVICE: ecr3
+  ECS_CLUSTER: deploytest                 
   ECS_TASK_DEFINITION: ./task-definition.json
-  CONTAINER_NAME: itstudycontainer       
+  CONTAINER_NAME: dockerdjango       
 
 jobs:
   build:
@@ -40,7 +40,7 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::641022061021:role/itstudyoicd
+          role-to-assume: arn:aws:iam::641022061021:role/imagepush
           role-session-name: sampleSessionName
           aws-region: ap-northeast-2
       - name: Login to Amazon ECR
