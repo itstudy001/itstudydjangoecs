@@ -40,7 +40,7 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::641022061021:oidc-provider/token.actions.githubusercontent.com
+          role-to-assume: arn:aws:iam::641022061021:role/imagepush
           role-session-name: sampleSessionName
           aws-region: ap-northeast-2
       - name: Login to Amazon ECR
